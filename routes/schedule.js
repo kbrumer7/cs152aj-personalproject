@@ -48,7 +48,7 @@ router.get('/remove/:itemId',
 router.get('/',
   isLoggedIn,
   async (req, res, next) => {
-      res.locals.items = await ScheduleItem.find({userId:req.user._id})
+      res.locals.items = await Schedule.find({userId:req.user._id})
       res.render('schedule');
 });
 
