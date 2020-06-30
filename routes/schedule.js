@@ -24,7 +24,7 @@ isLoggedIn = (req,res,next) => {
 router.post('/',
   isLoggedIn,
   async (req, res, next) => {
-      const schedule = new ScheduleItem(
+      const schedule = new Schedule(
         {name:req.body.name,
          time:req.body.time,
          days:req.body.days,
@@ -39,7 +39,7 @@ router.get('/remove/:itemId',
   isLoggedIn,
   async (req, res, next) => {
       console.log("inside /schedule/remove/:itemId")
-      await ScheduleItem.remove({_id:req.params.itemId});
+      await Schedule.remove({_id:req.params.itemId});
       res.redirect('/schedule')
 });
 

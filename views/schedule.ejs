@@ -3,20 +3,22 @@
   <div class="jumbotron">
     <h1> Schedule for <%= user.googlename %> </h1>
     <p> Here is your schedule with zoom links! </p>
+    <hr>
 
       <% items.forEach(item => { %>
-          <h3><%= item.name %> </h3>
-          <p>At <%= item.time %> on <%= item.days %>
-          <p>Zoom link: <%= item.link %>
-          <a href="/todo/remove/<%=item._id %>">Remove Meeting</a>
-          <br>
+          <strong><%= item.name %></strong>
+          at <%= item.time %> on <%= item.days %> <br>
+          Zoom link: <a href="<%= item.link %>"><%= item.link %></a><br>
+          <a href="/schedule/remove/<%=item._id %>">Remove Meeting</a>
+          <hr>
       <% }) %>
 
-      <form method="post" action="schedule">
+      <p>Add a new meeting to your schedule!</p>
+      <form method="post" action="/schedule">
           new meeting: <input type="text" name="name"><br>
           time of day: <input type="text" name="time"><br>
           days of the week: <input type="text" name="days"><br>
-          zoom link: <input type="text" name="days"><br>
+          zoom link: <input type="text" name="link"><br>
           <input type="submit" value="store">
       </form>
 
