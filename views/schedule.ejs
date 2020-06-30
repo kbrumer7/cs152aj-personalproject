@@ -8,7 +8,7 @@
       <% items.forEach(item => { %>
           <strong><%= item.name %></strong>
           at <%= item.time %> on <%= item.days %> <br>
-          Zoom link: <a href="<%= item.link %>"><%= item.link %></a><br>
+          zoom link: <a href="<%= item.link %>"><%= item.link %></a><br>
           <a href="/schedule/remove/<%=item._id %>">(remove meeting)</a>
           <hr>
       <% }) %>
@@ -19,7 +19,7 @@
           time of day: <input type="text" name="time"><br>
           days of the week: <input type="text" name="days"><br>
           zoom link: <input type="text" name="link"><br>
-          <input type="submit" value="store">
+          <input type="submit" value="store meeting">
       </form>
 
   </div>
