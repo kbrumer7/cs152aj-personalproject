@@ -18,7 +18,7 @@ const configPassport = require('../config/passport')
 configPassport(passport)
 
 router.use(session(
-  {secret: 'zzbbyananaresasd4322',
+  {secret: 'nZq5sBmcRythkeOezdgkcBC0',
    resave: false,
    saveUninitialized: false,
    cookie:{maxAge:24*60*60*1000}, // allow login for one day...
