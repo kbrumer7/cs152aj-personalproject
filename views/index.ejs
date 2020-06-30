@@ -1,0 +1,13 @@
+
+
+  <div class="jumbotron">
+    <h1> Your Schedule </h1>
+    <p>Welcome to where you can keep your zoom links all in one place! </p>
+    <ul>
+      <% if (loggedIn) {%>
+      <li><a href="/profile">See your profile </a></li>
+      <li><a href="/profiles">See everyone's profile</a></li>
+      <li><a href="/schedule">See your schedule </a></li>
+      <% } %>
+    </ul>
+  </div>
